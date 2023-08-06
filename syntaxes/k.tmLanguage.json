@@ -1,0 +1,71 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "k",
+	"patterns": [
+		{"include": "#lineComment"},
+		{"include": "#blockComment"},	
+		{"include": "#punctuation"},
+		{"include": "#label"},
+		{"include": "#def"},
+		{"include": "#double-quote-strings"},
+		{"include": "#single-quote-strings"},
+		{"include": "#constants"},
+		{"include": "#integers"}
+	],
+	"repository": {
+		"lineComment": {
+			"name": "comment.line.k",
+			"match": "(//|--|#|%).*$"
+		},
+		"blockComment": {
+			"name": "comment.block.k",
+			"begin": "/\\*",
+			"end": "\\*/"
+		},
+		"def": {
+			"name": "variable.other.k",
+			"match": "\\b([a-zA-Z_][a-zA-Z0-9_?!]*)\\s*="
+		},
+		"punctuation": {
+			"patterns": [{
+				"name": "constant.character.k",
+				"match": "(=|;|:)"
+			}]
+		},
+		"label": {
+			"name": "entity.name.tag.k",
+			"match": "\\.\\s*([a-zA-Z_][a-zA-Z0-9_?!]*)\\b"
+		},
+		"double-quote-strings": {
+			"name": "string.quoted.double.k",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.k",
+					"match": "\\\\."
+				}
+			]
+		},
+		"single-quote-strings": {
+			"name": "string.quoted.single.k",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.k",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constants": {
+			"name": "constant.language.k",
+			"match": "\\b(EQ|GT|CONCAT|SNOC|CONS|fromJSON|toJSON|PLUS|TIMES|DIV|FDIV|_log!|toDateMsec|toDateStr|int|bool|string|true|false|null)\\b"
+		},
+		"integers": {
+			"name": "constant.numeric.k",
+			"match": "\\b(0|[-]?[1-9][0-9]*)\\b"
+		}
+	},
+	"scopeName": "source.k"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "k",
+  "displayName": "k",
+  "description": "k-mode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "k",
+      "aliases": ["k", "k"],
+      "extensions": ["k"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "k",
+      "scopeName": "source.k",
+      "path": "./syntaxes/k.tmLanguage.json"
+    }]
+  }
+}
