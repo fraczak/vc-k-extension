@@ -29,7 +29,7 @@
 		"punctuation": {
 			"patterns": [{
 				"name": "constant.character.k",
-				"match": "(=|;|:|,|\\|)"
+				"match": "[=;:,|@]"
 			}]
 		},
 		"label": {
